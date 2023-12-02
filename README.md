@@ -4,6 +4,7 @@
 
   
 * Class
+![Cinema_Class](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/189c1616-8fbf-4973-9a00-57f564e658bf)
 
   
 * Activity
