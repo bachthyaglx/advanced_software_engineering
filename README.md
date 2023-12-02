@@ -7,6 +7,7 @@
 
   
 * Activity
+![Cinema_Activity](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/2b4d57b1-dfa3-4815-93e8-9dfc884543f6)
 
 # DDD
 
