@@ -1,6 +1,7 @@
 UML
 * Usecases
-  ![Cinema_Usecases drawio](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/b8ee1436-bb0b-49e3-9be8-2fcd11566438)
+  ![cinema_usecases drawio](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/9934c127-1343-4325-98de-393554142f64)
+
   
 * Class
 
