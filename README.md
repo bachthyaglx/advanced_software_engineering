@@ -2,7 +2,7 @@ UML
 
 DDD
 
-![cinema_management drawio](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/c7309c53-fe5f-4261-b4eb-c7fd33fc5ee1)
+![cinema_management drawio](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/6fae1f69-70ba-4f28-bb45-5f43a588fc4e)
 
 
 Metrics
