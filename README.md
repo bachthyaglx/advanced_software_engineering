@@ -55,6 +55,33 @@ PyBuilder
 # 8. Continuous Delivery
 Jenkins
 
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scmGit(branches: [[name: 'main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/bachthyaglx/advanced_software_engineering.git']])
+            }
+        }
+        stage('Build') {
+            steps {
+                git branch: 'main', url: 'https://github.com/bachthyaglx/advanced_software_engineering.git'
+                bat 'python -m py_compile src/main/python/main.py'
+                stash(name: 'compiled-results', includes: 'src/main/python/*.py*')
+            }
+        }
+        stage('Test') {
+            steps {
+                bat 'python -m py_compile src/unittest/python/tests.py' 
+                echo 'The job has been tested'
+            }
+        }
+    }
+}
+
+![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/1c916371-373f-44b7-9b51-ef942c027de3)
+
 # 9. IDE
 VSCode
 ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/9719efe6-1616-444d-bf83-05f2aed491af)
