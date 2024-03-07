@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="system_tests.TestSystem-20240229023245" tests="1" file="system_tests.py" time="0.003" timestamp="2024-02-29T02:32:46" failures="0" errors="1" skipped="0">
+	<testcase classname="system_tests.TestSystem" name="test_register_customer" time="0.003" timestamp="2024-02-29T02:32:46">
+		<error type="AttributeError" message="'sqlite3.Cursor' object attribute 'execute' is read-only"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 630, in run
+    self._callSetUp()
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 586, in _callSetUp
+    self.setUp()
+  File "d:\downloads\software_engineering\src\unittest\python\system_tests.py", line 8, in setUp
+    self.system.cursor.execute = MagicMock()
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'sqlite3.Cursor' object attribute 'execute' is read-only
+]]></error>
+	</testcase>
+</testsuite>

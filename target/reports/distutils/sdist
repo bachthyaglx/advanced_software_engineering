@@ -1,0 +1,38 @@
+running clean
+'build\lib' does not exist -- can't clean it
+'build\bdist.win-amd64' does not exist -- can't clean it
+'build\scripts-3.12' does not exist -- can't clean it
+running sdist
+running egg_info
+creating software_engineering.egg-info
+writing software_engineering.egg-info\PKG-INFO
+writing dependency_links to software_engineering.egg-info\dependency_links.txt
+writing namespace_packages to software_engineering.egg-info\namespace_packages.txt
+writing top-level names to software_engineering.egg-info\top_level.txt
+writing manifest file 'software_engineering.egg-info\SOURCES.txt'
+reading manifest file 'software_engineering.egg-info\SOURCES.txt'
+writing manifest file 'software_engineering.egg-info\SOURCES.txt'
+warning: sdist: standard file not found: should have one of README, README.rst, README.txt, README.md
+
+running check
+creating software_engineering-1.0.dev0
+creating software_engineering-1.0.dev0\scripts
+creating software_engineering-1.0.dev0\software_engineering.egg-info
+copying files to software_engineering-1.0.dev0...
+copying main.py -> software_engineering-1.0.dev0
+copying movie.py -> software_engineering-1.0.dev0
+copying setup.py -> software_engineering-1.0.dev0
+copying system.py -> software_engineering-1.0.dev0
+copying user.py -> software_engineering-1.0.dev0
+copying scripts\scrypt.py -> software_engineering-1.0.dev0\scripts
+copying software_engineering.egg-info\PKG-INFO -> software_engineering-1.0.dev0\software_engineering.egg-info
+copying software_engineering.egg-info\SOURCES.txt -> software_engineering-1.0.dev0\software_engineering.egg-info
+copying software_engineering.egg-info\dependency_links.txt -> software_engineering-1.0.dev0\software_engineering.egg-info
+copying software_engineering.egg-info\namespace_packages.txt -> software_engineering-1.0.dev0\software_engineering.egg-info
+copying software_engineering.egg-info\top_level.txt -> software_engineering-1.0.dev0\software_engineering.egg-info
+copying software_engineering.egg-info\zip-safe -> software_engineering-1.0.dev0\software_engineering.egg-info
+copying software_engineering.egg-info\SOURCES.txt -> software_engineering-1.0.dev0\software_engineering.egg-info
+Writing software_engineering-1.0.dev0\setup.cfg
+creating dist
+Creating tar archive
+removing 'software_engineering-1.0.dev0' (and everything under it)

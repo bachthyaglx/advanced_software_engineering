@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.TestSystem-20240306170121" tests="1" file="tests.py" time="0.006" timestamp="2024-03-06T17:01:21" failures="1" errors="0" skipped="0">
+	<testcase classname="tests.TestSystem" name="test_login_failure_incorrect_password" time="0.006" timestamp="2024-03-06T17:01:21">
+		<failure type="AssertionError" message="&lt;user.Customer object at 0x000001F5C69B1970&gt; is not None"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 634, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 589, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "d:\downloads\software_engineering\src\unittest\python\tests.py", line 25, in test_login_failure_incorrect_password
+    self.assertIsNone(user)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 1281, in assertIsNone
+    self.fail(self._formatMessage(msg, standardMsg))
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 715, in fail
+    raise self.failureException(msg)
+    ^^^^^^^^^^^^^^^^^
+AssertionError: <user.Customer object at 0x000001F5C69B1970> is not None
+]]></failure>
+	</testcase>
+</testsuite>

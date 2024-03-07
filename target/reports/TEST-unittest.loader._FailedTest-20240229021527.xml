@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unittest.loader._FailedTest-20240229021527" tests="1" file="unittest/loader.py" time="0.001" timestamp="2024-02-29T02:15:27" failures="0" errors="1" skipped="0">
+	<testcase classname="unittest.loader._FailedTest" name="software_engineering_tests" time="0.001" timestamp="2024-02-29T02:15:27">
+		<error type="ImportError" message="Failed to import test module: software_engineering_tests
+Traceback (most recent call last):
+  File &quot;C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\loader.py&quot;, line 129, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;d:\downloads\software_engineering\src\unittest\python\software_engineering_tests.py&quot;, line 4, in &lt;module&gt;
+    from software_engineering_tests import helloworld
+ImportError: cannot import name 'helloworld' from partially initialized module 'software_engineering_tests' (most likely due to a circular import) (d:\downloads\software_engineering\src\unittest\python\software_engineering_tests.py)
+"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 634, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 589, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\loader.py", line 33, in testFailure
+    raise self._exception
+    ^^^^^^^^^^^^^^^^^
+ImportError: Failed to import test module: software_engineering_tests
+Traceback (most recent call last):
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\loader.py", line 129, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\downloads\software_engineering\src\unittest\python\software_engineering_tests.py", line 4, in <module>
+    from software_engineering_tests import helloworld
+ImportError: cannot import name 'helloworld' from partially initialized module 'software_engineering_tests' (most likely due to a circular import) (d:\downloads\software_engineering\src\unittest\python\software_engineering_tests.py)
+
+]]></error>
+	</testcase>
+</testsuite>

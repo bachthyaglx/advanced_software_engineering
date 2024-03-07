@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.TestSystem-20240306164715" tests="2" file="tests.py" time="0.000" timestamp="2024-03-06T16:47:15" failures="1" errors="0" skipped="0">
+	<testcase classname="tests.TestSystem" name="test_login_success" time="0.000" timestamp="2024-03-06T16:47:15"/>
+	<testcase classname="tests.TestSystem" name="test_view_movies_success" time="0.000" timestamp="2024-03-06T16:47:15">
+		<failure type="AssertionError" message="None is not true"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 634, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 589, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "d:\downloads\software_engineering\src\unittest\python\tests.py", line 19, in test_view_movies_success
+    self.assertTrue(movies)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 727, in assertTrue
+    raise self.failureException(msg)
+    ^^^^^^^^^^^^^^^^^
+AssertionError: None is not true
+]]></failure>
+	</testcase>
+</testsuite>

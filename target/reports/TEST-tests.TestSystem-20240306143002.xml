@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.TestSystem-20240306143002" tests="1" file="tests.py" time="0.000" timestamp="2024-03-06T14:30:02" failures="0" errors="1" skipped="0">
+	<testcase classname="tests.TestSystem" name="test_login_success" time="0.000" timestamp="2024-03-06T14:30:02">
+		<error type="AttributeError" message="'TestSystem' object has no attribute 'system'"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 634, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 589, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "d:\downloads\software_engineering\src\unittest\python\tests.py", line 9, in test_login_success
+    self.system.connection = MagicMock()
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'TestSystem' object has no attribute 'system'
+]]></error>
+	</testcase>
+</testsuite>

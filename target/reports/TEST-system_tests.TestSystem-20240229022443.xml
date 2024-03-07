@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="system_tests.TestSystem-20240229022443" tests="3" file="system_tests.py" time="0.016" timestamp="2024-02-29T02:24:44" failures="0" errors="3" skipped="0">
+	<testcase classname="system_tests.TestSystem" name="test_get_movie_list" time="0.000" timestamp="2024-02-29T02:24:44">
+		<error type="AttributeError" message="'System' object has no attribute 'get_movie_list'"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 634, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 589, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "d:\downloads\software_engineering\src\unittest\python\system_tests.py", line 22, in test_get_movie_list
+    movies = self.system.get_movie_list()
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'System' object has no attribute 'get_movie_list'
+]]></error>
+	</testcase>
+	<testcase classname="system_tests.TestSystem" name="test_get_user_reservations" time="0.000" timestamp="2024-02-29T02:24:44">
+		<error type="AttributeError" message="'System' object has no attribute 'get_user_reservations'"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 634, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 589, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "d:\downloads\software_engineering\src\unittest\python\system_tests.py", line 44, in test_get_user_reservations
+    reservations = self.system.get_user_reservations('JohnDoe')
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'System' object has no attribute 'get_user_reservations'
+]]></error>
+	</testcase>
+	<testcase classname="system_tests.TestSystem" name="test_reserve_ticket" time="0.016" timestamp="2024-02-29T02:24:44">
+		<error type="AttributeError" message="'System' object has no attribute 'reserve_ticket'"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 634, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 589, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "d:\downloads\software_engineering\src\unittest\python\system_tests.py", line 32, in test_reserve_ticket
+    reservation_status = self.system.reserve_ticket('Movie 1', 'JohnDoe', 3)
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'System' object has no attribute 'reserve_ticket'
+]]></error>
+	</testcase>
+</testsuite>

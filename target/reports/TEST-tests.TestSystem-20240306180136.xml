@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.TestSystem-20240306180136" tests="3" file="tests.py" time="0.007" timestamp="2024-03-06T18:01:36" failures="0" errors="1" skipped="0">
+	<testcase classname="tests.TestSystem" name="test_login_success" time="0.001" timestamp="2024-03-06T18:01:36"/>
+	<testcase classname="tests.TestSystem" name="test_login_success_admin" time="0.000" timestamp="2024-03-06T18:01:36"/>
+	<testcase classname="tests.TestSystem" name="test_view_specific_movie_success" time="0.006" timestamp="2024-03-06T18:01:36">
+		<error type="AttributeError" message="'System' object has no attribute 'view_specific_movie'"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 634, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 589, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "d:\downloads\software_engineering\src\unittest\python\tests.py", line 55, in test_view_specific_movie_success
+    movie = self.system.view_specific_movie(1)
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'System' object has no attribute 'view_specific_movie'
+]]></error>
+	</testcase>
+</testsuite>

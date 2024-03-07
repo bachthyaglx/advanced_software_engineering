@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="system_tests.TestSystem-20240229022547" tests="1" file="system_tests.py" time="0.003" timestamp="2024-02-29T02:25:47" failures="0" errors="1" skipped="0">
+	<testcase classname="system_tests.TestSystem" name="test_add_movie" time="0.003" timestamp="2024-02-29T02:25:47">
+		<error type="AttributeError" message="'System' object has no attribute 'add_movie'"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 634, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 589, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "d:\downloads\software_engineering\src\unittest\python\system_tests.py", line 21, in test_add_movie
+    self.system.add_movie(*new_movie)
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'System' object has no attribute 'add_movie'
+]]></error>
+	</testcase>
+</testsuite>

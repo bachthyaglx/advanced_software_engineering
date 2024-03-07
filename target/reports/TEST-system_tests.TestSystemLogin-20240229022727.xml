@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="system_tests.TestSystemLogin-20240229022727" tests="2" file="system_tests.py" time="0.000" timestamp="2024-02-29T02:27:27" failures="0" errors="0" skipped="0">
+	<testcase classname="system_tests.TestSystemLogin" name="test_login_failure" time="0.000" timestamp="2024-02-29T02:27:27"/>
+	<testcase classname="system_tests.TestSystemLogin" name="test_login_success" time="0.000" timestamp="2024-02-29T02:27:27"/>
+</testsuite>

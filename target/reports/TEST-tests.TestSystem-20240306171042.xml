@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.TestSystem-20240306171042" tests="2" file="tests.py" time="0.003" timestamp="2024-03-06T17:10:42" failures="0" errors="1" skipped="0">
+	<testcase classname="tests.TestSystem" name="test_login_success" time="0.001" timestamp="2024-03-06T17:10:42"/>
+	<testcase classname="tests.TestSystem" name="test_movie_existence" time="0.002" timestamp="2024-03-06T17:10:42">
+		<error type="AttributeError" message="'System' object has no attribute 'check_movie_existence'"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 634, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 589, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "d:\downloads\software_engineering\src\unittest\python\tests.py", line 40, in test_movie_existence
+    movie_exists = self.system.check_movie_existence("Play Dead")
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'System' object has no attribute 'check_movie_existence'
+]]></error>
+	</testcase>
+</testsuite>

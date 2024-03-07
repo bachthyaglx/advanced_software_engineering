@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.TestSystem-20240306165201" tests="2" file="tests.py" time="0.016" timestamp="2024-03-06T16:52:01" failures="1" errors="0" skipped="0">
+	<testcase classname="tests.TestSystem" name="test_login_success_with_valid_credentials" time="0.000" timestamp="2024-03-06T16:52:01"/>
+	<testcase classname="tests.TestSystem" name="test_view_movies_success" time="0.016" timestamp="2024-03-06T16:52:01">
+		<failure type="AssertionError" message="Expected 'print' to be called once. Called 0 times."><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 634, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 589, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1387, in patched
+    return func(*newargs, **newkeywargs)
+    ^^^^^^^^^^^^^^^^^
+  File "d:\downloads\software_engineering\src\unittest\python\tests.py", line 45, in test_view_movies_success
+    mock_print.assert_called_once_with('\n'.join(expected_output))
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 955, in assert_called_once_with
+    raise AssertionError(msg)
+    ^^^^^^^^^^^^^^^^^
+AssertionError: Expected 'print' to be called once. Called 0 times.
+]]></failure>
+	</testcase>
+</testsuite>

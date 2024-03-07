@@ -1,0 +1,29 @@
+
+[notice] A new release of pip is available: 23.3.1 -> 24.0
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+[notice] A new release of pip is available: 23.3.1 -> 24.0
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+[notice] A new release of pip is available: 23.3.1 -> 24.0
+[notice] To update, run: python.exe -m pip install --upgrade pip
+Collecting requests
+  Using cached requests-2.31.0-py3-none-any.whl.metadata (4.6 kB)
+Collecting charset-normalizer<4,>=2 (from requests)
+  Using cached charset_normalizer-3.3.2-cp312-cp312-win_amd64.whl.metadata (34 kB)
+Collecting idna<4,>=2.5 (from requests)
+  Using cached idna-3.6-py3-none-any.whl.metadata (9.9 kB)
+Collecting urllib3<3,>=1.21.1 (from requests)
+  Using cached urllib3-2.2.1-py3-none-any.whl.metadata (6.4 kB)
+Collecting certifi>=2017.4.17 (from requests)
+  Using cached certifi-2024.2.2-py3-none-any.whl.metadata (2.2 kB)
+Using cached requests-2.31.0-py3-none-any.whl (62 kB)
+Using cached certifi-2024.2.2-py3-none-any.whl (163 kB)
+Using cached charset_normalizer-3.3.2-cp312-cp312-win_amd64.whl (100 kB)
+Using cached idna-3.6-py3-none-any.whl (61 kB)
+Using cached urllib3-2.2.1-py3-none-any.whl (121 kB)
+Installing collected packages: urllib3, idna, charset-normalizer, certifi, requests
+Successfully installed certifi-2024.2.2 charset-normalizer-3.3.2 idna-3.6 requests-2.31.0 urllib3-2.2.1
+
+[notice] A new release of pip is available: 23.3.1 -> 24.0
+[notice] To update, run: python.exe -m pip install --upgrade pip

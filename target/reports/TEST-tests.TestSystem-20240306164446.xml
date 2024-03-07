@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.TestSystem-20240306164446" tests="3" file="tests.py" time="0.019" timestamp="2024-03-06T16:44:46" failures="0" errors="1" skipped="0">
+	<testcase classname="tests.TestSystem" name="test_login_success" time="0.001" timestamp="2024-03-06T16:44:46"/>
+	<testcase classname="tests.TestSystem" name="test_register_customer_success" time="0.013" timestamp="2024-03-06T16:44:46"/>
+	<testcase classname="tests.TestSystem" name="test_view_movies_success" time="0.005" timestamp="2024-03-06T16:44:46">
+		<error type="OperationalError" message="table movies has no column named release"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 634, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 589, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "d:\downloads\software_engineering\src\unittest\python\tests.py", line 21, in test_view_movies_success
+    system.cursor.execute("INSERT INTO movies (name, director, release, language, subtitle, rate) VALUES (?, ?, ?, ?, ?, ?)", ("Movie1", "Director1", "2024-01-01", "English", "Yes", "PG-13"))
+    ^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table movies has no column named release
+]]></error>
+	</testcase>
+</testsuite>

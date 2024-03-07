@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="system_tests.TestSystem-20240229024055" tests="2" file="system_tests.py" time="0.004" timestamp="2024-02-29T02:40:55" failures="0" errors="2" skipped="0">
+	<testcase classname="system_tests.TestSystem" name="test_login_successful" time="0.004" timestamp="2024-02-29T02:40:55">
+		<error type="AttributeError" message="'StubbedInvocation' object has no attribute 'thenReturn'"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 634, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 589, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "d:\downloads\software_engineering\src\unittest\python\system_tests.py", line 12, in test_login_successful
+    when(self.system).cursor.thenReturn(mock_cursor)
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'StubbedInvocation' object has no attribute 'thenReturn'
+]]></error>
+	</testcase>
+	<testcase classname="system_tests.TestSystem" name="test_login_unsuccessful" time="0.000" timestamp="2024-02-29T02:40:55">
+		<error type="AttributeError" message="'StubbedInvocation' object has no attribute 'thenReturn'"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 634, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 589, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "d:\downloads\software_engineering\src\unittest\python\system_tests.py", line 27, in test_login_unsuccessful
+    when(self.system).cursor.thenReturn(mock_cursor)
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'StubbedInvocation' object has no attribute 'thenReturn'
+]]></error>
+	</testcase>
+</testsuite>

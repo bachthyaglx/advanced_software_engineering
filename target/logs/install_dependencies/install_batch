@@ -1,0 +1,5 @@
+Collecting mock
+  Using cached mock-5.1.0-py3-none-any.whl.metadata (3.0 kB)
+Using cached mock-5.1.0-py3-none-any.whl (30 kB)
+Installing collected packages: mock
+Successfully installed mock-5.1.0

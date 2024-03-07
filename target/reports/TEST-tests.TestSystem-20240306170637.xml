@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.TestSystem-20240306170637" tests="2" file="tests.py" time="0.000" timestamp="2024-03-06T17:06:37" failures="0" errors="1" skipped="0">
+	<testcase classname="tests.TestSystem" name="test_login_success" time="0.000" timestamp="2024-03-06T17:06:37"/>
+	<testcase classname="tests.TestSystem" name="test_view_specific_movie" time="0.000" timestamp="2024-03-06T17:06:37">
+		<error type="AttributeError" message="'TestSystem' object has no attribute 'mock_print'"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 634, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 589, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "d:\downloads\software_engineering\src\unittest\python\tests.py", line 53, in test_view_specific_movie
+    self.mock_print.assert_called_once_with('\n'.join(expected_output))
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'TestSystem' object has no attribute 'mock_print'
+]]></error>
+	</testcase>
+</testsuite>

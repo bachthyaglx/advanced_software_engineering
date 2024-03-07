@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unittest.loader._FailedTest-20240229021127" tests="1" file="unittest/loader.py" time="0.000" timestamp="2024-02-29T02:11:27" failures="0" errors="1" skipped="0">
+	<testcase classname="unittest.loader._FailedTest" name="software_engineering_tests" time="0.000" timestamp="2024-02-29T02:11:27">
+		<error type="ImportError" message="Failed to import test module: software_engineering_tests
+Traceback (most recent call last):
+  File &quot;C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\loader.py&quot;, line 129, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;d:\downloads\software_engineering\src\unittest\python\software_engineering_tests.py&quot;, line 4, in &lt;module&gt;
+    from helloworld import helloworld
+ModuleNotFoundError: No module named 'helloworld'
+"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 634, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 589, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\loader.py", line 33, in testFailure
+    raise self._exception
+    ^^^^^^^^^^^^^^^^^
+ImportError: Failed to import test module: software_engineering_tests
+Traceback (most recent call last):
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\loader.py", line 129, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\downloads\software_engineering\src\unittest\python\software_engineering_tests.py", line 4, in <module>
+    from helloworld import helloworld
+ModuleNotFoundError: No module named 'helloworld'
+
+]]></error>
+	</testcase>
+</testsuite>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.TestSystem-20240306142432" tests="2" file="tests.py" time="0.007" timestamp="2024-03-06T14:24:32" failures="0" errors="1" skipped="0">
+	<testcase classname="tests.TestSystem" name="test_login_failure_wrong_password" time="0.001" timestamp="2024-03-06T14:24:32"/>
+	<testcase classname="tests.TestSystem" name="test_view_movies_success" time="0.006" timestamp="2024-03-06T14:24:32">
+		<error type="TypeError" message="Movie.__init__() missing 3 required positional arguments: 'language', 'subtitle', and 'rate'"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 634, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 589, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "d:\downloads\software_engineering\src\unittest\python\tests.py", line 24, in test_view_movies_success
+    self.system.view_movies()
+    ^^^^^^^^^^^^^^^^^
+  File "d:\downloads\software_engineering\src\main\python\system.py", line 138, in view_movies
+    movies = [Movie(*movie_data) for movie_data in movies_data]
+    ^^^^^^^^^^^^^^^^^
+TypeError: Movie.__init__() missing 3 required positional arguments: 'language', 'subtitle', and 'rate'
+]]></error>
+	</testcase>
+</testsuite>

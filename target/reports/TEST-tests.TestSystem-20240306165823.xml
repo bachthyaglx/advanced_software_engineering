@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.TestSystem-20240306165823" tests="1" file="tests.py" time="0.016" timestamp="2024-03-06T16:58:24" failures="0" errors="1" skipped="0">
+	<testcase classname="tests.TestSystem" name="test_login_success_admin" time="0.016" timestamp="2024-03-06T16:58:24">
+		<error type="AttributeError" message="'sqlite3.Cursor' object attribute 'fetchone' is read-only"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 634, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 589, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1387, in patched
+    return func(*newargs, **newkeywargs)
+    ^^^^^^^^^^^^^^^^^
+  File "d:\downloads\software_engineering\src\unittest\python\tests.py", line 19, in test_login_success_admin
+    system.cursor.fetchone = MagicMock(return_value=user_data)
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'sqlite3.Cursor' object attribute 'fetchone' is read-only
+]]></error>
+	</testcase>
+</testsuite>

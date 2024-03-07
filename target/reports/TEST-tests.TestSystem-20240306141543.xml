@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.TestSystem-20240306141543" tests="3" file="tests.py" time="0.000" timestamp="2024-03-06T14:15:43" failures="0" errors="1" skipped="0">
+	<testcase classname="tests.TestSystem" name="test_login_failure" time="0.000" timestamp="2024-03-06T14:15:43"/>
+	<testcase classname="tests.TestSystem" name="test_login_success" time="0.000" timestamp="2024-03-06T14:15:43"/>
+	<testcase classname="tests.TestSystem" name="test_book_ticket_invalid_movie_id" time="0.000" timestamp="2024-03-06T14:15:43">
+		<error type="TypeError" message="System.book_ticket() takes 2 positional arguments but 4 were given"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 58, in testPartExecutor
+    yield
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 634, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khuu Bach Thy\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 589, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "d:\downloads\software_engineering\src\unittest\python\tests.py", line 55, in test_book_ticket_invalid_movie_id
+    self.system.book_ticket(Customer("john@example.com", "password"), "invalid_movie_id", "room_type")
+    ^^^^^^^^^^^^^^^^^
+TypeError: System.book_ticket() takes 2 positional arguments but 4 were given
+]]></error>
+	</testcase>
+</testsuite>
