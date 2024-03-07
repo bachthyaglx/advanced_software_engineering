@@ -16,6 +16,7 @@ pipeline {
         }
         stage('Test') {
             steps {
+                bat 'python -m py_compile src/unittest/python/tests.py' 
                 echo 'The job has been tested'
             }
         }
