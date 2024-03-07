@@ -21,7 +21,7 @@
 
 # 4. Metrics
 
-![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/8616bf72-f9ca-4bd2-855f-acecfef61ca8)
+![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/08129a62-14a9-4cc2-8534-a5725ce5c5e6)
 
 
 # 5. Clean Code Development
