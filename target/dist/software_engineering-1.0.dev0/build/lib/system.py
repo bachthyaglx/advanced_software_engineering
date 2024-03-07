@@ -1,3 +1,4 @@
+import os  
 import sqlite3
 import datetime
 from user import User, Customer, Admin
@@ -7,13 +8,41 @@ class System:
     def __init__(self, database="cinema.db"):
         # Initialize login status attribute
         self.logged_in_user = None
-        
         try:
             self.connection = sqlite3.connect(database)
             self.cursor = self.connection.cursor()
             self.customers = []
         except sqlite3.Error as e:
             print(f"Database connection error: {e}")
+
+    def clear_screen(self):
+        if os.name == 'posix':
+            # For Unix/Linux/MacOS
+            os.system('clear')
+        elif os.name == 'nt':
+            # For Windows
+            os.system('cls')
+            
+    def run(self):
+        while True:
+            self.clear_screen()
+            print("\nWelcome to our Cinema! Latest movies:\n")
+            self.view_movies()
+            print("\n1. Login\n2. Register\n3. Exit")
+            choice = input("\nSelect an option: ")
+            if choice == "1":
+                self.clear_screen()
+                self.handle_login()
+            elif choice == "2":
+                self.clear_screen()
+                self.handle_registration()
+            elif choice == "3":
+                self.clear_screen()
+                print("\nGoodbye!\n")
+                quit()
+            else:
+                self.clear_screen()
+                print("\nInvalid choice. Please try again.")
 
     def login(self, email, password):
         try:
@@ -30,7 +59,24 @@ class System:
         except sqlite3.Error as e:
             print(f"Database error: {e}")
             return None, None
-
+        
+    def handle_login(self):
+            try:
+                email = input("\nEnter email: ")
+                password = input("Enter password: ")
+                user, role = self.login(email, password)
+                if user:
+                    print(f"\nWelcome, {email}! You are logged in as {role}.")
+                    # Set the logged_in_user attribute
+                    self.logged_in_user = user
+                    self.handle_user_menu(user, role)
+                else:
+                    print("\nUser not found. Please try again or register an account!")
+            except KeyboardInterrupt:
+                print("\nLogin process interrupted by the user.")
+            except Exception as e:
+                print(f"An error occurred: {e}. Please try again.")
+            
     def register_customer(self, firstname, lastname, email, password):
         try:
             insert_query = """INSERT INTO users (firstname, lastname, email, password) VALUES (?,?,?,?)"""
@@ -41,39 +87,6 @@ class System:
         except sqlite3.IntegrityError:
             print("User with this email already exists. Please choose another email.")
             return None
-
-    def run(self):
-        while True:
-            print("\nWelcome to our Cinema! Latest movies:\n")
-            self.view_movies()
-            print("\n1. Login\n2. Register\n3. Exit")
-            choice = input("\nSelect an option: ")
-            if choice == "1":
-                self.handle_login()
-            elif choice == "2":
-                self.handle_registration()
-            elif choice == "3":
-                print("\nGoodbye!")
-                quit()
-            else:
-                print("\nInvalid choice. Please try again.")
-
-    def handle_login(self):
-        try:
-            email = input("\nEnter email: ")
-            password = input("Enter password: ")
-            user, role = self.login(email, password)
-            if user:
-                print(f"\nWelcome, {email}! You are logged in as {role}.")
-                # Set the logged_in_user attribute
-                self.logged_in_user = user
-                self.handle_user_menu(user, role)
-            else:
-                print("\nUser not found. Please try again or register an account!")
-        except KeyboardInterrupt:
-            print("\nLogin process interrupted by the user.")
-        except Exception as e:
-            print(f"An error occurred: {e}. Please try again.")
 
     def handle_registration(self):
         firstname = input("\nFirstname: ")
@@ -94,39 +107,48 @@ class System:
         else:
             print("\nInvalid role. Please try again.")
 
-
     def customer_menu(self, customer):
         while True:
+            self.clear_screen()
             print("\n1. View Movies and Showtimes\n2. Book a Seat\n3. Manage Bookings\n4. Logout")
             customer_choice = input("\nSelect an option: ")
 
             if customer_choice == "1":
+                self.clear_screen()
                 self.view_movies()
             elif customer_choice == "2":
+                self.clear_screen()
                 self.book_ticket(customer)
             elif customer_choice == "3":
+                self.clear_screen()
                 self.manage_bookings(customer)
             elif customer_choice == "4":
                 print("\nLogging out...")
                 self.logged_in_user = None
+                self.clear_screen()
                 return self.run()
             else:
                 print("\nInvalid choice. Please try again.")
 
     def admin_menu(self, admin):
         while True:
+            self.clear_screen()
             print("\n1. View Movies and Showtimes\n2. Manage Movies and Schedules\n3. Manage Customer Bookings\n4. Logout")
             admin_choice = input("\nSelect an option: ")
 
             if admin_choice == "1":
+                self.clear_screen()
                 self.view_movies()
             elif admin_choice == "2":
+                self.clear_screen()
                 self.manage_movies()
             elif admin_choice == "3":
+                self.clear_screen()
                 self.manage_customer_bookings()
             elif admin_choice == "4":
                 print("\nLogging out...")
                 self.logged_in_user = None
+                self.clear_screen()
                 return self.run()
             else:
                 print("\nInvalid choice. Please try again.")
@@ -192,9 +214,10 @@ class System:
             customer_choice = input("Select an option: ")
 
             if customer_choice == "1":
-                self.view_customer_bookings(customer)
+                self.clear_screen()
+                self.view_all_customer_bookings(customer)
             elif customer_choice == "2":
-                print("Going back to Customer Menu...")
+                self.clear_screen()
                 break
             else:
                 print("\nInvalid choice. Please try again.")
@@ -202,16 +225,21 @@ class System:
     def manage_movies(self):
         print("\nManaging Movies and Schedules:")
         while True:
+            self.clear_screen()
             print("\n1. Insert New Movie\n2. Edit Existing Movie\n3. Back to Admin Menu")
             admin_choice = input("Select an option: ")
 
             if admin_choice == "1":
+                self.clear_screen()
                 self.insert_new_movie()
             elif admin_choice == "2":
+                self.clear_screen()
                 self.edit_existing_movie()
             elif admin_choice == "3":
+                self.clear_screen()
                 break
             else:
+                self.clear_screen()
                 print("\nInvalid choice. Please try again.")
                 
     def manage_customer_bookings(self):
@@ -221,13 +249,16 @@ class System:
             admin_choice = input("Select an option: ")
 
             if admin_choice == "1":
+                self.clear_screen()
                 self.view_all_customer_bookings()
             elif admin_choice == "2":
+                self.clear_screen()
                 self.edit_customer_booking()
             elif admin_choice == "3":
+                self.clear_screen()
                 self.delete_customer_booking()
             elif admin_choice == "4":
-                print("Going back to Admin Menu...")
+                self.clear_screen()
                 break
             else:
                 print("\nInvalid choice. Please try again.")

@@ -1,10 +1,14 @@
 import os  
 import sqlite3
 import datetime
-from user import User, Customer, Admin
+from user import Customer, Admin
 from movie import Movie
 
 class System:
+    # Setup MESS
+    SELECT_OPTION_PROMPT = "\nSelect an option: "
+    INVALID_CHOICE_MESSAGE = "\nInvalid choice. Please try again."
+        
     def __init__(self, database="cinema.db"):
         # Initialize login status attribute
         self.logged_in_user = None
@@ -29,8 +33,8 @@ class System:
             self.clear_screen()
             print("\nWelcome to our Cinema! Latest movies:\n")
             self.view_movies()
-            print("\n1. Login\n2. Register\n3. Exit")
-            choice = input("\nSelect an option: ")
+            print(f"\n1. Login\n2. Register\n3. Exit{self.SELECT_OPTION_PROMPT}")
+            choice = input()
             if choice == "1":
                 self.clear_screen()
                 self.handle_login()
@@ -43,7 +47,7 @@ class System:
                 quit()
             else:
                 self.clear_screen()
-                print("\nInvalid choice. Please try again.")
+                print(self.INVALID_CHOICE_MESSAGE)
 
     def login(self, email, password):
         try:
@@ -68,7 +72,6 @@ class System:
                 user, role = self.login(email, password)
                 if user:
                     print(f"\nWelcome, {email}! You are logged in as {role}.")
-                    # Set the logged_in_user attribute
                     self.logged_in_user = user
                     self.handle_user_menu(user, role)
                 else:
@@ -94,7 +97,7 @@ class System:
         lastname = input("Lastname: ")
         email = input("Email: ")
         password = input("Password: ")
-        new_customer = self.register_customer(firstname, lastname, email, password)
+        self.register_customer(firstname, lastname, email, password)
         print(f"\nAccount created for {email}. You can now log in.")
 
     def handle_user_menu(self, user, role):
@@ -106,13 +109,13 @@ class System:
         if menu_func:
             menu_func(user)
         else:
-            print("\nInvalid role. Please try again.")
+            print(self.INVALID_CHOICE_MESSAGE)
 
     def customer_menu(self, customer):
         while True:
             self.clear_screen()
-            print("\n1. View Movies and Showtimes\n2. Book a Seat\n3. Manage Bookings\n4. Logout")
-            customer_choice = input("\nSelect an option: ")
+            print("\n1. View Movies and Showtimes\n2. Book a Seat\n3. Manage Bookings\n4. Logout" + self.SELECT_OPTION_PROMPT)
+            customer_choice = input()
 
             if customer_choice == "1":
                 self.clear_screen()
@@ -129,13 +132,13 @@ class System:
                 self.clear_screen()
                 return self.run()
             else:
-                print("\nInvalid choice. Please try again.")
+                print(self.INVALID_CHOICE_MESSAGE)
 
     def admin_menu(self, admin):
         while True:
             self.clear_screen()
-            print("\n1. View Movies and Showtimes\n2. Manage Movies and Schedules\n3. Manage Customer Bookings\n4. Logout")
-            admin_choice = input("\nSelect an option: ")
+            print("\n1. View Movies and Showtimes\n2. Manage Movies and Schedules\n3. Manage Customer Bookings\n4. Logout" + self.SELECT_OPTION_PROMPT)
+            admin_choice = input()
 
             if admin_choice == "1":
                 self.clear_screen()
@@ -152,7 +155,7 @@ class System:
                 self.clear_screen()
                 return self.run()
             else:
-                print("\nInvalid choice. Please try again.")
+                print(self.INVALID_CHOICE_MESSAGE)
 
     def view_movies(self):
         self.cursor.execute("SELECT * FROM movies")
@@ -181,7 +184,7 @@ class System:
 
         room_type_choice = input("\nSelect a room type (enter room type number): ")
 
-        available_seats = self.get_available_seats(movie_id, room_type_choice)
+        available_seats = self.get_available_seats(room_type_choice)
 
         if not available_seats:
             print("No available seats for the selected room type.")
@@ -211,24 +214,24 @@ class System:
     def manage_bookings(self, customer):
         print("\nManaging Bookings:")
         while True:
-            print("\n1. View Your Bookings\n2. Back to Customer Menu")
-            customer_choice = input("Select an option: ")
+            print("\n1. View Your Bookings\n2. Back to Customer Menu" + self.SELECT_OPTION_PROMPT)
+            customer_choice = input()
 
             if customer_choice == "1":
                 self.clear_screen()
-                self.view_all_customer_bookings(customer)
+                self.view_customer_bookings(customer)
             elif customer_choice == "2":
                 self.clear_screen()
                 break
             else:
-                print("\nInvalid choice. Please try again.")
+                print(self.INVALID_CHOICE_MESSAGE)
         
     def manage_movies(self):
         print("\nManaging Movies and Schedules:")
         while True:
             self.clear_screen()
-            print("\n1. Insert New Movie\n2. Edit Existing Movie\n3. Back to Admin Menu")
-            admin_choice = input("Select an option: ")
+            print("\n1. Insert New Movie\n2. Edit Existing Movie\n3. Back to Admin Menu" + self.SELECT_OPTION_PROMPT)
+            admin_choice = input()
 
             if admin_choice == "1":
                 self.clear_screen()
@@ -241,13 +244,13 @@ class System:
                 break
             else:
                 self.clear_screen()
-                print("\nInvalid choice. Please try again.")
+                print(self.INVALID_CHOICE_MESSAGE)
                 
     def manage_customer_bookings(self):
         print("\nManaging Customer Bookings:")
         while True:
-            print("\n1. View all bookings\n2. Edit booking\n3. Delete booking\n4. Back to Admin Menu")
-            admin_choice = input("Select an option: ")
+            print("\n1. View all bookings\n2. Edit booking\n3. Delete booking\n4. Back to Admin Menu" + + self.SELECT_OPTION_PROMPT)
+            admin_choice = input()
 
             if admin_choice == "1":
                 self.clear_screen()
@@ -262,7 +265,7 @@ class System:
                 self.clear_screen()
                 break
             else:
-                print("\nInvalid choice. Please try again.")
+                print(self.INVALID_CHOICE_MESSAGE)
 
     def insert_new_movie(self):
         print("\nInserting New Movie:")
@@ -321,7 +324,29 @@ class System:
                 
         except ValueError as e:
             print(f"\nError: {e}. Please enter a valid positive integer for Movie ID.")
+            
+    def view_customer_bookings(self, customer):
+        print("\nViewing Your Bookings:")
+        query = """SELECT bookings.id, movies.name, rooms.number, seats.number, bookings.date
+            FROM bookings
+            JOIN movies ON bookings.movies_id = movies.id
+            JOIN rooms ON bookings.rooms_id = rooms.id
+            JOIN seats ON bookings.seats_id = seats.id
+            WHERE bookings.users_id = ?
+        """
+        self.cursor.execute(query, (customer.id,))
+        bookings_data = self.cursor.fetchall()
 
+        if bookings_data:
+            print("\nYour Bookings:")
+            print(f"{'Booking ID':<12}{'Movie Name':<30}{'Room Number':<15}{'Seat Number':<15}{'Date':<20}")
+            print("-" * 100)
+            for booking_data in bookings_data:
+                print(f"{booking_data[0]:<12}{booking_data[1]:<30}{booking_data[2]:<15}{booking_data[3]:<15}{booking_data[4]:<20}")
+            print("-" * 100)
+        else:
+            print("\nYou have no bookings.")
+        
     def view_all_customer_bookings(self):
         print("\nViewing All Customer Bookings:")
         query = """SELECT bookings.id, users.email, movies.name, rooms.number, seats.number, bookings.date
@@ -406,7 +431,7 @@ class System:
         except ValueError as e:
             print(f"\nError: {e}. Please enter a valid positive integer for Booking ID.")    
 
-    def get_available_seats(self, movie_id, room_type_choice):
+    def get_available_seats(self, room_type_choice):
         query = """
             SELECT seats.id, rooms.number, seats.number
             FROM seats

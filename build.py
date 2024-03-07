@@ -1,4 +1,3 @@
-#   -*- coding: utf-8 -*-
 from pybuilder.core import use_plugin, init
 
 use_plugin("python.core")
@@ -20,12 +19,12 @@ default_task = "publish"
 @init
 def set_properties(project):
     project.set_property("coverage_break_build", False)
+    project.set_property("verbose", True)
     project.set_property("dir_source_main_python", "src/main/python")
     project.set_property("dir_source_unittest_python", "src/unittest/python")
     project.set_property("unittest_module_glob", "tests.py")
     project.build_depends_on("pytest")
     project.build_depends_on("mock")
-
 
 @init(environments="unit_test")
 def set_properties_for_unit_tests(project):

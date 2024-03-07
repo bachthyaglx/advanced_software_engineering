@@ -42,7 +42,6 @@ class TestSystem(unittest.TestCase):
             # Assert that user is an instance of Admin and role is 'admin'
             self.assertIsInstance(user, Admin)
             self.assertEqual(role, 'admin')
-    
               
 if __name__ == '__main__':
     unittest.main()
