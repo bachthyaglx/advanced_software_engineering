@@ -1,5 +1,6 @@
 # 1. Git
-  ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/9519f222-4813-4866-bc12-b575d10e6e5b)
+  ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/1fb97edd-7604-410f-8e1d-38a122849718)
+
 
 # 2. UML
 * Usecases
