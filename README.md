@@ -89,5 +89,10 @@ VSCode
 
 # 10. DSL
 
+![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/e3e04e33-4d7d-4067-b6e6-fac933ec4c13)
+
+connect: Allows users to connect to the specified cinema database using SQLite.
+get_movie_with_highest_rating: Retrieves the movie with the highest rating from the database by executing a SQL query.
+The DSL is demonstrated by connecting to the database, retrieving the movie with the highest rating, and printing its name.
 
 # 11. Functional Programming
