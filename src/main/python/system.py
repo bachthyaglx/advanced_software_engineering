@@ -1,5 +1,7 @@
-import os  
+import os
+import keyboard
 import sqlite3
+import time
 import datetime
 from user import Customer, Admin
 from movie import Movie
@@ -27,7 +29,14 @@ class System:
         elif os.name == 'nt':
             # For Windows
             os.system('cls')
-            
+    
+    def back_to_previous_menu(self):
+        print(f"\nESC. Back to previous menu")
+        while True:
+            if(keyboard.is_pressed('esc')):
+                self.clear_screen()
+                break
+
     def run(self):
         while True:
             self.clear_screen()
@@ -47,7 +56,6 @@ class System:
                 quit()
             else:
                 self.clear_screen()
-                print(self.INVALID_CHOICE_MESSAGE)
 
     def login(self, email, password):
         try:
@@ -108,18 +116,18 @@ class System:
         menu_func = menu_options.get(role)
         if menu_func:
             menu_func(user)
-        else:
-            print(self.INVALID_CHOICE_MESSAGE)
 
     def customer_menu(self, customer):
         while True:
             self.clear_screen()
-            print("\n1. View Movies and Showtimes\n2. Book a Seat\n3. Manage Bookings\n4. Logout" + self.SELECT_OPTION_PROMPT)
+            print(f"\nHello! " + customer.email)
+            print("\n1. View movies and showtimes\n2. Book a ticket\n3. Manage bookings\n4. Logout" + self.SELECT_OPTION_PROMPT)
             customer_choice = input()
 
             if customer_choice == "1":
                 self.clear_screen()
                 self.view_movies()
+                self.back_to_previous_menu()
             elif customer_choice == "2":
                 self.clear_screen()
                 self.book_ticket(customer)
@@ -130,9 +138,7 @@ class System:
                 print("\nLogging out...")
                 self.logged_in_user = None
                 return self.run()
-            else:
-                print(self.INVALID_CHOICE_MESSAGE)
-
+        
     def admin_menu(self, admin):
         while True:
             self.clear_screen()
@@ -142,6 +148,7 @@ class System:
             if admin_choice == "1":
                 self.clear_screen()
                 self.view_movies()
+                self.back_to_previous_menu()
             elif admin_choice == "2":
                 self.clear_screen()
                 self.manage_movies()
@@ -154,61 +161,86 @@ class System:
                 self.clear_screen()
                 return self.run()
             else:
-                print(self.INVALID_CHOICE_MESSAGE)
+                self.clear_screen()
 
     def view_movies(self):
         self.cursor.execute("SELECT * FROM movies")
         movies_data = self.cursor.fetchall()
         movies = [Movie(*movie_data) for movie_data in movies_data]
-        
+            
         print(f"\n{'-' * 70}")
-        print(f"{'No':<5}{'Name':<30}{'Language':<15}{'Release Date':<15}")  # Update column header
+        print(f"{'ID':<5}{'Name':<30}{'Language':<15}{'Release Date':<15}")  # Update column header
         print(f"{'-' * 70}")
         for movie in movies:
             print(f"{movie.id:<5}{movie.name:<30}{movie.language:<15}{movie.release_date:<15}")  # Update column name
         print(f"{'-' * 70}")
             
     def book_ticket(self, customer):
-        print("\nBooking a Ticket:")
+        print("\nBooking a ticket")
         self.view_movies()
 
+        self.cursor.execute("SELECT * FROM movies")
+        movies_data = self.cursor.fetchall()
+        movies = [Movie(*movie_data) for movie_data in movies_data]
+
         movie_id = input("\nSelect a movie (enter movie ID): ")
-        try:
-            movie_id = int(movie_id)
-            if movie_id <= 0:
-                raise ValueError("Movie ID must be a positive integer.")
-        except ValueError as e:
-            print(f"Error: {e}. Please enter a valid positive integer for Movie ID.")
-            return
+        valid_movie_ids = [str(movie.id) for movie in movies]  # Get list of valid movie IDs as strings
 
-        room_type_choice = input("\nSelect a room type (enter room type number): ")
+        while movie_id not in valid_movie_ids:
+            print("Error: Invalid movie ID. Please enter a valid movie ID.")
+            movie_id = input("\nSelect a movie (enter movie ID): ")
 
-        available_seats = self.get_available_seats(room_type_choice)
+        room_type = input("\nSelect a room type (2D or 3D): ").strip().upper()
 
-        if not available_seats:
+        while room_type not in ["2D", "3D"]:
+            print("Error: Invalid room type. Please enter either '2D' or '3D'.")
+            room_type = input("\nSelect a room type (2D or 3D): ").strip().upper()
+
+        available_seats_query = """
+            SELECT seats.id, rooms.number, seats.number
+            FROM seats
+            JOIN rooms ON seats.rooms_id = rooms.id
+            JOIN movies ON rooms.movies_id = movies.id
+            WHERE seats.reserved='No' AND rooms.type=? AND movies.id=?
+        """
+
+        self.cursor.execute(available_seats_query, (room_type, movie_id))
+        available_seats_data = self.cursor.fetchall()
+
+        if not available_seats_data:
             print("No available seats for the selected room type.")
             return
 
         print("\nAvailable Seats:")
-        for seat in available_seats:
-            print(f"Seat ID: {seat[0]}, Room Number: {seat[1]}, Seat Number: {seat[2]}")
+        for seat_data in available_seats_data:
+            print(f"Seat ID: {seat_data[0]}, Room Number: {seat_data[1]}, Seat Number: {seat_data[2]}")
 
-        seat_id = input("\nSelect a seat (enter seat ID): ")
-        try:
-            seat_id = int(seat_id)
-            if seat_id <= 0:
-                raise ValueError("Seat ID must be a positive integer.")
-        except ValueError as e:
-            print(f"Error: {e}. Please enter a valid positive integer for Seat ID.")
-            return
+        available_seat_ids = [str(seat_data[0]) for seat_data in available_seats_data]
+       
+        while True:
+                seat_id = input("\nSelect a seat (enter seat ID): ")
+
+                if seat_id in available_seat_ids:
+                    break
+                else:
+                    print("Error: Invalid seat ID. Please enter a valid seat ID.")
 
         current_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        # Fetching the first available seat's room number and seat number
+        room_number = available_seats_data[0][1]
+        # Fetch customer.id
+        customer_id_querry = """SELECT id from users where email=?"""
+
+        self.cursor.execute(customer_id_querry, (customer.email,))
+        customer_id = self.cursor.fetchone()[0]
 
         insert_ticket_query = """INSERT INTO tickets (users_id, movies_id, room_id, seat_id, date) VALUES (?, ?, ?, ?, ?)"""
-        self.cursor.execute(insert_ticket_query, (customer.id, movie_id, seat[0], seat[1], current_date))
+        self.cursor.execute(insert_ticket_query, (customer_id, movie_id, room_number, seat_id, current_date))
         self.connection.commit()
 
         print("\nTicket booked successfully!")
+        print("\nReturing to previous menu in 10s...")
+        time.sleep(10)
         
     def manage_bookings(self, customer):
         print("\nManaging Bookings:")
@@ -219,17 +251,18 @@ class System:
             if customer_choice == "1":
                 self.clear_screen()
                 self.view_customer_bookings(customer)
+                self.back_to_previous_menu()
             elif customer_choice == "2":
                 self.clear_screen()
                 break
             else:
-                print(self.INVALID_CHOICE_MESSAGE)
+                self.clear_screen()
         
     def manage_movies(self):
         print("\nManaging Movies and Schedules:")
         while True:
             self.clear_screen()
-            print("\n1. Insert New Movie\n2. Edit Existing Movie\n3. Back to Admin Menu" + self.SELECT_OPTION_PROMPT)
+            print("\n1. Insert new movie\n2. Edit existing movie\n3. Back to admin menu" + self.SELECT_OPTION_PROMPT)
             admin_choice = input()
 
             if admin_choice == "1":
@@ -243,7 +276,6 @@ class System:
                 break
             else:
                 self.clear_screen()
-                print(self.INVALID_CHOICE_MESSAGE)
                 
     def manage_customer_bookings(self):
         print("\nManaging Customer Bookings:")
@@ -264,7 +296,7 @@ class System:
                 self.clear_screen()
                 break
             else:
-                print(self.INVALID_CHOICE_MESSAGE)
+                self.clear_screen()
 
     def insert_new_movie(self):
         print("\nInserting New Movie:")
@@ -300,14 +332,14 @@ class System:
                 print(f"ID: {movie.id}")
                 print(f"Name: {movie.name}")
                 print(f"Director: {movie.director}")
-                print(f"Release Date: {movie.release}")
+                print(f"Release Date: {movie.release_date}")
                 print(f"Language: {movie.language}")
                 print(f"Subtitle: {movie.subtitle}")
                 print(f"Rating: {movie.rate}")
 
                 name = input("\nEnter new movie name (press Enter to keep existing): ") or movie.name
                 director = input("Enter new director name (press Enter to keep existing): ") or movie.director
-                release = input("Enter new release date (press Enter to keep existing): ") or movie.release
+                release = input("Enter new release date (press Enter to keep existing): ") or movie.release_date
                 language = input("Enter new language (press Enter to keep existing): ") or movie.language
                 subtitle = input("Does the movie have subtitles? (Yes/No, press Enter to keep existing): ") or movie.subtitle
                 rate = input("Enter new movie rating (press Enter to keep existing): ") or movie.rate
@@ -326,26 +358,30 @@ class System:
             
     def view_customer_bookings(self, customer):
         print("\nViewing Your Bookings:")
-        query = """SELECT bookings.id, movies.name, rooms.number, seats.number, bookings.date
-            FROM bookings
-            JOIN movies ON bookings.movies_id = movies.id
-            JOIN rooms ON bookings.rooms_id = rooms.id
-            JOIN seats ON bookings.seats_id = seats.id
-            WHERE bookings.users_id = ?
+        # Fetch customer.id
+        customer_id_querry = """SELECT id from users where email=?"""
+        self.cursor.execute(customer_id_querry, (customer.email,))
+        customer_id = self.cursor.fetchone()[0]
+        
+        query = """SELECT tickets.id, movies.name, rooms.number, seats.number, tickets.date
+            FROM tickets
+            JOIN movies ON tickets.movies_id = movies.id
+            JOIN rooms ON tickets.room_id = rooms.id
+            JOIN seats ON tickets.seat_id = seats.id
+            JOIN users ON tickets.users_id = users.id
+            WHERE tickets.users_id = ?
         """
-        self.cursor.execute(query, (customer.id,))
-        bookings_data = self.cursor.fetchall()
+        self.cursor.execute(query, (customer_id,))
+        bookings_data = self.cursor.fetchall()[0]
 
         if bookings_data:
-            print("\nYour Bookings:")
-            print(f"{'Booking ID':<12}{'Movie Name':<30}{'Room Number':<15}{'Seat Number':<15}{'Date':<20}")
+            print(f"\n{'Booking ID':<12}{'Movie Name':<30}{'Room Number':<15}{'Seat Number':<15}{'Date':<20}")
             print("-" * 100)
-            for booking_data in bookings_data:
-                print(f"{booking_data[0]:<12}{booking_data[1]:<30}{booking_data[2]:<15}{booking_data[3]:<15}{booking_data[4]:<20}")
+            print(f"{bookings_data[0]:<12}{bookings_data[1]:<30}{bookings_data[2]:<15}{bookings_data[3]:<15}{bookings_data[4]:<20}")
             print("-" * 100)
         else:
             print("\nYou have no bookings.")
-        
+
     def view_all_customer_bookings(self):
         print("\nViewing All Customer Bookings:")
         query = """SELECT bookings.id, users.email, movies.name, rooms.number, seats.number, bookings.date
@@ -360,7 +396,7 @@ class System:
 
         if bookings_data:
             print("\nAll Customer Bookings:")
-            print(f"{'Booking ID':<12}{'Customer Email':<25}{'Movie Name':<30}{'Room Number':<15}{'Seat Number':<15}{'Date':<20}")
+            print(f"{'Booking ID':<12}{'Customer Email':<40}{'Movie Name':<30}{'Room Number':<30}{'Seat Number':<20}{'Date':<40}")
             print("-" * 120)
             for booking_data in bookings_data:
                 print(f"{booking_data[0]:<12}{booking_data[1]:<25}{booking_data[2]:<30}{booking_data[3]:<15}{booking_data[4]:<15}{booking_data[5]:<20}")
