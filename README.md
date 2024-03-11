@@ -1,5 +1,6 @@
 # 1. Git
-  ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/13e5d27f-999d-498f-b9d8-fbfd9f303aea)
+  ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/1fb97edd-7604-410f-8e1d-38a122849718)
+
 
 # 2. UML
 * Usecases
@@ -20,7 +21,7 @@
 
 # 4. Metrics
 
-![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/8616bf72-f9ca-4bd2-855f-acecfef61ca8)
+![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/08129a62-14a9-4cc2-8534-a5725ce5c5e6)
 
 
 # 5. Clean Code Development
@@ -54,12 +55,55 @@ PyBuilder
 # 8. Continuous Delivery
 Jenkins
 
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scmGit(branches: [[name: 'main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/bachthyaglx/advanced_software_engineering.git']])
+            }
+        }
+        stage('Build') {
+            steps {
+                git branch: 'main', url: 'https://github.com/bachthyaglx/advanced_software_engineering.git'
+                bat 'python -m py_compile src/main/python/main.py'
+                stash(name: 'compiled-results', includes: 'src/main/python/*.py*')
+            }
+        }
+        stage('Test') {
+            steps {
+                bat 'python -m py_compile src/unittest/python/tests.py' 
+                echo 'The job has been tested'
+            }
+        }
+    }
+}
+
+![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/1c916371-373f-44b7-9b51-ef942c027de3)
+
 # 9. IDE
 VSCode
 ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/9719efe6-1616-444d-bf83-05f2aed491af)
 
-
 # 10. DSL
 
+![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/e3e04e33-4d7d-4067-b6e6-fac933ec4c13)
+
++ connect: Allows users to connect to the specified cinema database using SQLite.
++ get_movie_with_highest_rating: Retrieves the movie with the highest rating from the database by executing a SQL query.
++ The DSL is demonstrated by connecting to the database, retrieving the movie with the highest rating, and printing its name.
 
 # 11. Functional Programming
+
+* Final Data Structures: The data structures used in the code, such as lists and tuples, appear to be immutable. For example, in the view_movies method, a list of Movie objects is created from fetched data, which seems to remain unchanged once created.
+
+* (Mostly) Side-Effect-Free Functions: Most functions in the code seem to have minimal side effects. For instance, methods like view_movies, view_customer_bookings, and get_available_seats appear to be pure functions as they take input arguments and return computed results without modifying any external state. However, methods like handle_login, handle_registration, and functions that interact with the database involve side effects (such as database interactions), but these are isolated to specific areas of the code.
+
+* Use of Higher-Order Functions: Higher-order functions are functions that take other functions as parameters or return functions as results. There are several instances of this in the code: The create_user_instance function is a higher-order function as it returns different types of users (Customer or Admin) based on the provided parameters. The menu function inside handle_user_menu is another example. It defines a menu loop and is invoked within the handle_user_menu function. Additionally, there are built-in higher-order functions like map or filter that could potentially be utilized in various parts of the code for more functional style operations.
+
+* Functions as Parameters and Return Values: The create_user_instance function takes a function (either Admin or Customer) as a parameter and returns an instance of that type. Functions like handle_user_menu and menu return functions or accept functions as parameters. In the login method, the create_user_instance function is passed as a parameter to determine the type of user to create.
+
+* Use of Closures/Anonymous Functions: While the code doesn't explicitly demonstrate closures, it does utilize anonymous functions (lambda functions) in certain places. For instance, you might use a lambda function as a callback function in GUI libraries or event-driven programming. Although not prevalent in the provided snippet, closures could potentially be used in more advanced scenarios or if the code is extended.
+
+Overall, the code demonstrates several aspects of functional programming, including the use of immutable data structures, (mostly) side-effect-free functions, higher-order functions, functions as parameters and return values, and the potential use of closures/anonymous functions in certain contexts.
