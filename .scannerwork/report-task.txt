@@ -2,5 +2,5 @@ projectKey=cinema
 serverUrl=http://localhost:9000
 serverVersion=10.4.1.88267
 dashboardUrl=http://localhost:9000/dashboard?id=cinema
-ceTaskId=e31e48a8-1e82-4eba-9dab-76c1430f47c8
-ceTaskUrl=http://localhost:9000/api/ce/task?id=e31e48a8-1e82-4eba-9dab-76c1430f47c8
+ceTaskId=ae7d48ac-107a-4dc6-b888-58c3269ad922
+ceTaskUrl=http://localhost:9000/api/ce/task?id=ae7d48ac-107a-4dc6-b888-58c3269ad922

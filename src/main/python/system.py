@@ -6,7 +6,7 @@ from movie import Movie
 
 class System:
     # Setup MESS
-    SELECT_OPTION_PROMPT = "\nSelect an option: "
+    SELECT_OPTION_PROMPT = "\n\nSelect an option: "
     INVALID_CHOICE_MESSAGE = "\nInvalid choice. Please try again."
         
     def __init__(self, database="cinema.db"):
@@ -31,9 +31,9 @@ class System:
     def run(self):
         while True:
             self.clear_screen()
-            print("\nWelcome to our Cinema! Latest movies:\n")
+            print("\nWelcome to our Cinema! Latest movies:")
             self.view_movies()
-            print(f"\n1. Login\n2. Register\n3. Exit{self.SELECT_OPTION_PROMPT}")
+            print(f"\n1. Login\n2. Register\n3. Exit" + self.SELECT_OPTION_PROMPT)
             choice = input()
             if choice == "1":
                 self.clear_screen()
@@ -66,20 +66,20 @@ class System:
             return None, None
         
     def handle_login(self):
-            try:
-                email = input("\nEnter email: ")
-                password = input("Enter password: ")
-                user, role = self.login(email, password)
-                if user:
-                    print(f"\nWelcome, {email}! You are logged in as {role}.")
-                    self.logged_in_user = user
-                    self.handle_user_menu(user, role)
-                else:
-                    print("\nUser not found. Please try again or register an account!")
-            except KeyboardInterrupt:
-                print("\nLogin process interrupted by the user.")
-            except Exception as e:
-                print(f"An error occurred: {e}. Please try again.")
+        try:
+            email = input("\nEnter email: ")
+            password = input("Enter password: ")
+            user, role = self.login(email, password)
+            if user:
+                print(f"\nWelcome, {email}! You are logged in as {role}.")
+                self.logged_in_user = user
+                self.handle_user_menu(user, role)
+            else:
+                print("\nUser not found. Please try again or register an account!")
+        except KeyboardInterrupt:
+            print("\nLogin process interrupted by the user.")
+        except Exception as e:
+            print(f"An error occurred: {e}. Please try again.")
             
     def register_customer(self, firstname, lastname, email, password):
         try:
@@ -129,7 +129,6 @@ class System:
             elif customer_choice == "4":
                 print("\nLogging out...")
                 self.logged_in_user = None
-                self.clear_screen()
                 return self.run()
             else:
                 print(self.INVALID_CHOICE_MESSAGE)
