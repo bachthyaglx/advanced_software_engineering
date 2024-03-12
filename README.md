@@ -1,9 +1,8 @@
 # 1. Git
   ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/1fb97edd-7604-410f-8e1d-38a122849718)
 
-
 # 2. UML
-* Usecases
+* Usecases - The usecase diagram illustrates the interactions between actors including users and administrators, and the functionality of system. Customers and administrators have certain rights to interact with the system to perform actions such as logging in, booking tickets, managing movies, and managing customer bookings, ect...
   
   ![Cinema_Usecases](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/3aec3fb2-627d-48a0-9e72-0c8992fc279d)
 
