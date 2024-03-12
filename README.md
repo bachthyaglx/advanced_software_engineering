@@ -16,7 +16,7 @@
 
 # 3. DDD 
 
-The DDD shows bounded contexts of system that are defined around key domain entities, including users, movies, rooms, seats, bookings, tickets, payment. Each bounded context is tailored to handle operations and rules related to that specific entity. For instance, the user bounded context manages user authentication, registration, and customer-related functionalities, while the movie bounded context handles tasks like retrieving movie information, managing directors, and maintaining release dates, etc...
+The DDD shows bounded contexts of system that are defined around key domain entities, including users, movies, rooms, seats, bookings, tickets, payment. Each bounded context is customized to handle operations and rules related to that specific entity. For instance, the user bounded context manages user authentication, registration, and customer-related functionalities, while the movie bounded context handles tasks like retrieving movie information, managing directors, and maintaining release dates, etc...
 
 ![Cinema_DDD](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/bd506c19-1724-4145-a1b3-887c02103031)
 
