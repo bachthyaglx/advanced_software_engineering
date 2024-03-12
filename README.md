@@ -10,7 +10,7 @@
   
   ![Cinema_Class](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/51b8fa94-a359-449d-9704-6ed2f91d5356)
 
-* Activity
+* Activity - The activity diagram shows the flow of activities and actions performed by users and administrators. Activities include logging in, booking tickets, managing movies, and managing customer bookings, each represented by activity nodes. Control flow arrows depict the sequence of actions, decisions, and loops involved in each activity, providing insight into the system's workflow and user interactions.
   
   ![Cinema_Activity](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/fe6bec53-9358-4e4c-9c4a-742d46454b0f)
 
