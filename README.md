@@ -129,7 +129,7 @@ The following picture is an example of DSL, showing the connection to the databa
   
 ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/ac2e1430-5999-40a2-aad0-d76c9468217c)
 
-* (Mostly) Side-Effect-Free Functions - The login function retrieves user data from the database based on the provided email and password, without causing any side effects. It returns user information based on the given credentials and does not modify any external state. 
+* (Mostly) Side-Effect-Free Functions - The login function retrieves user data from the database based on the provided email and password without causing any side effects. It returns user information based on the given credentials and does not modify any external state. 
 
 ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/89389770-b8a6-4c97-9b4c-457086f4f95b)
 
