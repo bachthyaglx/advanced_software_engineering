@@ -115,19 +115,19 @@ The following picture is an example of DSL, showing the connection to the databa
 
 # 11. Functional Programming
 
-* Final Data Structures: In the view_movies method, a list of Movie objects is created from fetched data, which seems to remain unchanged once created.
+* Final Data Structures - In the view_movies method, a list of Movie objects is created from fetched data, which seems to remain unchanged once created.
   
 ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/ac2e1430-5999-40a2-aad0-d76c9468217c)
 
-* (Mostly) Side-Effect-Free Functions: The login function retrieves user data from the database based on the provided email and password, without causing any side effects. It does not modify any external state, and its primary purpose is to return user information based on the given credentials.
+* (Mostly) Side-Effect-Free Functions - The login function retrieves user data from the database based on the provided email and password, without causing any side effects. It returns user information based on the given credentials and does not modify any external state. 
 
 ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/89389770-b8a6-4c97-9b4c-457086f4f95b)
 
-* Use of Higher-Order Functions: The handle_user_menu demonstrates the concept of higher-order functions by dynamically selecting and executing different menu functions based on the user's role.
+* Use of Higher-Order Functions - The handle_user_menu demonstrates the concept of higher-order functions by dynamically selecting and executing different menu functions based on the user's role.
 
 ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/5d77a453-2091-4bbb-96b4-4172ecf3dd88)
 
-* Functions as Parameters and Return Values: The handle_login function demonstrates functions as parameters (passing email and password to the login function) and return values (returning a tuple containing user and role from the login function).
+* Functions as Parameters and Return Values - The handle_login function demonstrates functions as parameters. It passes email and password to the login function, then return values with a tuple containing user and role from the login function.
 
 ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/fd308deb-b8bd-49b6-88e0-87bba7010c94)
 
