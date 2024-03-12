@@ -2,11 +2,11 @@
   ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/1fb97edd-7604-410f-8e1d-38a122849718)
 
 # 2. UML
-* Usecases - The usecase diagram illustrates the interactions between actors including users and administrators, and the functionality of system. Customers and administrators have certain rights to interact with the system to perform actions such as logging in, booking tickets, managing movies, and managing customer bookings, ect...
+* Usecases - The usecase diagram illustrates the interactions between actors including users and administrators, and the functionality of system. The diagram also depict relationships in how actors use the system's features to achieve specific goals. Customers and administrators have certain rights to interact with the system to perform actions such as logging in, booking tickets, managing movies, and managing customer bookings, ect...
   
   ![Cinema_Usecases](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/3aec3fb2-627d-48a0-9e72-0c8992fc279d)
 
-* Class
+* Class - The class diagram represents the static structure of system, showing classes, attributes, methods, and their relationships. The classes within the system include entities such as users, movies, rooms, seats, tickets, and the system itself. Each entity is defined by its respective attributes and methods. Relationships also show associations between classes. For example, users book tickets, movies have rooms, etc.. and their multiplicities.
   
   ![Cinema_Class](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/51b8fa94-a359-449d-9704-6ed2f91d5356)
 
