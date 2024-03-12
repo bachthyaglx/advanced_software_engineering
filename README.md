@@ -85,9 +85,9 @@ pipeline {
     }
 }
 
-* 'Checkout' stage pulls the latest changes from the main branch of your repository, ensuring that the pipeline always operates on the latest codebase. 
-* 'Build' stage compiles the Python code using the py_compile module and stashes the compiled results for further deployment or testing phases. 
-* 'Test' stage executes unit tests on the Python codebase to ensure its quality and reliability before proceeding with deployment, thereby facilitating a robust continuous delivery workflow.
+* 'Checkout' - Pulls the latest changes from the main branch of your repository, ensuring that the pipeline always operates on the latest codebase. 
+* 'Build' - Compiles the Python code using the py_compile module and stashes the compiled results for further deployment or testing phases. 
+* 'Test' - Executes unit tests on the Python codebase to ensure its quality and reliability before proceeding with deployment, thereby facilitating a robust continuous delivery workflow.
  
 ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/1c916371-373f-44b7-9b51-ef942c027de3)
 
