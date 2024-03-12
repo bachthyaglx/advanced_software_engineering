@@ -22,7 +22,7 @@ The DDD shows bounded contexts of system that are defined around key domain enti
 
 # 4. Metrics
 
-SonarQube is used to evaluate code quality, including metrics for code complexity, duplication, maintainability, and security vulnerabilities. From the following picture, these metrics are satisfied for improvement and maintain high-quality code standards for the progam. 
+SonarQube is used to evaluate code quality, including metrics for code complexity, duplication, maintainability, and security vulnerabilities. From the following picture, these metrics are meet to ensure the improvement and maintain high-quality code standards for the progam. 
 
 ![311001368-08129a62-14a9-4cc2-8534-a5725ce5c5e6](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/06613a0b-58d7-4c35-b77c-bcea4e619cd7)
 
