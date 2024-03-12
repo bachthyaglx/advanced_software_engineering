@@ -47,25 +47,28 @@ PyBuilder is used for enhances development efficiency, testing, and dependency m
 
 ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/ad226445-b19b-4b9e-908e-d731d6fe4d76)
 
+Setup configuration for build managment via build.py file
+
+![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/1cf20675-ed51-4a72-892b-c5cb9be13f5f)
+
 # 7. Unit Tests
 
-* Test logging with a valid user account
+* Test logging with a valid user account (./src/unittest/python/tests.py)
 
   ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/df5a3938-2a49-4ff9-b1e8-1a7c65c60d35)
 
-* Test logging with a valid admin account
+* Test logging with a valid admin account (./src/unittest/python/tests.py)
 
   ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/be75d07a-db18-4045-918c-aa1637d84726)
   
-* Result for both unit tests
+* Result for both unit tests by PyBuilder 
 
   ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/f91dd942-0313-46d3-832a-4c3ed82dd220)
   ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/9f737928-1ed9-477c-a61e-3961d4e7c7bb)
 
-
 # 8. Continuous Delivery
 
-The following Jenkins pipeline automates various stages of the continuous delivery process.
+The following Jenkins pipeline (Jenkinsfile) automates various stages of the continuous delivery process.
 
 pipeline {
     agent any
@@ -92,9 +95,9 @@ pipeline {
     }
 }
 
-* 'Checkout' - Pulls the latest changes from the main branch of your repository, ensuring that the pipeline always operates on the latest codebase. 
-* 'Build' - Compiles the Python code using the py_compile module and stashes the compiled results for further deployment and testing phases. 
-* 'Test' - Executes unit tests on the Python codebase to ensure its quality and reliability before proceeding with deployment
+* 'Checkout' stage - Pulls the latest changes from the main branch of your repository, ensuring that the pipeline always operates on the latest codebase. 
+* 'Build'stage - Compiles the Python code using the py_compile module and stashes the compiled results for further deployment and testing phases. 
+* 'Test' stage - Executes unit tests on the Python codebase to ensure its quality and reliability before proceeding with deployment.
  
 ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/1c916371-373f-44b7-9b51-ef942c027de3)
 
