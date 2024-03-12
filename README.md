@@ -1,7 +1,14 @@
 # 1. Git
-  ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/1fb97edd-7604-410f-8e1d-38a122849718)
+
+* git init - Initializes a new Git repository in the current directory
+* git add . - Adds all the files in the current directory and its subdirectories to the staging area
+* git commit -m "Add existing project files prior to the push to Github" - Commits the changes in the staging area to the local repository. The -m flag describes a commit message
+* git push -u -f origin main - Pushes the committed changes from the local repository to the remote repository on GitHub. The -u flag sets the upstream branch, linking the local main branch to the main branch on the remote repository. The -f flag forces the push, overriding any conflicts or restrictions.
+  
+![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/1fb97edd-7604-410f-8e1d-38a122849718)
 
 # 2. UML
+
 * Usecases - The usecase diagram illustrates the interactions between actors including users and administrators, and the functionality of system. The diagram also depict relationships in how actors use the system's features to achieve specific goals. Customers and administrators have certain rights to interact with the system to perform actions such as logging in, booking tickets, managing movies, and managing customer bookings, ect...
   
   ![Cinema_Usecases](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/3aec3fb2-627d-48a0-9e72-0c8992fc279d)
