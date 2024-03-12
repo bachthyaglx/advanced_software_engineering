@@ -42,11 +42,11 @@ PyBuilder is used for enhances development efficiency, testing, and dependency m
 
 # 7. Unit Tests
 
-* Test logging with a user account
+* Test logging with a valid user account
 
   ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/df5a3938-2a49-4ff9-b1e8-1a7c65c60d35)
 
-* Test logging with admin account
+* Test logging with a valid admin account
 
   ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/be75d07a-db18-4045-918c-aa1637d84726)
   
