@@ -99,10 +99,10 @@ Visual Studio Code (VSCode) is used for programming and developing software. The
 
 My top favorvate key shortcuts on VSCode:
 
-* Ctrl + alt + up/down - Add cursor to multiple lines. 
+* Ctrl + alt + up/down - Add cursor to multiple lines
 * Ctrl + K + C - Comment multiple lines
 * Ctrl + K + U - Uncomment multiple lines
-* Ctrl + C followed by Ctrl + V. 
+* Ctrl + C followed by Ctrl + V - Copy/paste
 
 # 10. DSL
 
