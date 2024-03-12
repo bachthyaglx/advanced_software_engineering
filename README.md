@@ -115,12 +115,22 @@ The following picture is an example of DSL, showing the connection to the databa
 
 # 11. Functional Programming
 
-* Final Data Structures: The data structures used in the code, such as lists and tuples, appear to be immutable. For example, in the view_movies method, a list of Movie objects is created from fetched data, which seems to remain unchanged once created.
+* Final Data Structures: In the view_movies method, a list of Movie objects is created from fetched data, which seems to remain unchanged once created.
+  
+![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/ac2e1430-5999-40a2-aad0-d76c9468217c)
 
-* (Mostly) Side-Effect-Free Functions: Most functions in the code seem to have minimal side effects. For instance, methods like view_movies, view_customer_bookings, and get_available_seats appear to be pure functions as they take input arguments and return computed results without modifying any external state. However, methods like handle_login, handle_registration, and functions that interact with the database involve side effects (such as database interactions), but these are isolated to specific areas of the code.
+* (Mostly) Side-Effect-Free Functions: The login function retrieves user data from the database based on the provided email and password, without causing any side effects. It does not modify any external state, and its primary purpose is to return user information based on the given credentials.
 
-* Use of Higher-Order Functions: Higher-order functions are functions that take other functions as parameters or return functions as results. There are several instances of this in the code: The create_user_instance function is a higher-order function as it returns different types of users (Customer or Admin) based on the provided parameters. The menu function inside handle_user_menu is another example. It defines a menu loop and is invoked within the handle_user_menu function. Additionally, there are built-in higher-order functions like map or filter that could potentially be utilized in various parts of the code for more functional style operations.
+![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/89389770-b8a6-4c97-9b4c-457086f4f95b)
 
-* Functions as Parameters and Return Values: The create_user_instance function takes a function (either Admin or Customer) as a parameter and returns an instance of that type. Functions like handle_user_menu and menu return functions or accept functions as parameters. In the login method, the create_user_instance function is passed as a parameter to determine the type of user to create.
+* Use of Higher-Order Functions: The handle_user_menu demonstrates the concept of higher-order functions by dynamically selecting and executing different menu functions based on the user's role.
 
-* Use of Closures/Anonymous Functions: While the code doesn't explicitly demonstrate closures, it does utilize anonymous functions (lambda functions) in certain places. For instance, you might use a lambda function as a callback function in GUI libraries or event-driven programming. Although not prevalent in the provided snippet, closures could potentially be used in more advanced scenarios or if the code is extended.
+![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/5d77a453-2091-4bbb-96b4-4172ecf3dd88)
+
+* Functions as Parameters and Return Values: The handle_login function demonstrates functions as parameters (passing email and password to the login function) and return values (returning a tuple containing user and role from the login function).
+
+![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/fd308deb-b8bd-49b6-88e0-87bba7010c94)
+
+* Use of Closures/Anonymous Functions: The manage_customer_bookings function demonstrates the use of anonymous functions through the input() function.
+
+![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/c942501e-9fe2-4632-b10d-7d357b7d21f1)
