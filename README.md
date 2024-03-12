@@ -14,7 +14,9 @@
   
   ![Cinema_Activity](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/fe6bec53-9358-4e4c-9c4a-742d46454b0f)
 
-# 3. DDD
+# 3. DDD 
+
+The DDD shows bounded contexts of system that are delineated around key domain entities, including users, movies, rooms, seats, and bookings. Each bounded context encloses domain logic specific to its respective entity, ensuring clear separation of concerns and maintaining a cohesive design.
 
 ![Cinema_DDD](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/bd506c19-1724-4145-a1b3-887c02103031)
 
