@@ -1,8 +1,8 @@
 # 1. Git
 
-* git init - Initializes a new Git repository in the current directory
-* git add . - Adds all the files in the current directory and its subdirectories to the staging area
-* git commit -m "Add existing project files prior to the push to Github" - Commits the changes in the staging area to the local repository. The -m flag describes a commit message
+* git init - Initializes a new Git repository in the current directory.
+* git add . - Adds all the files in the current directory and its subdirectories to the staging area.
+* git commit -m "Add existing project files prior to the push to Github" - Commits the changes in the staging area to the local repository. The -m flag describes a commit message.
 * git push -u -f origin main - Pushes the committed changes from the local repository to the remote repository on GitHub. The -u flag sets the upstream branch, linking the local main branch to the main branch on the remote repository. The -f flag forces the push, overriding any conflicts or restrictions.
   
 ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/1fb97edd-7604-410f-8e1d-38a122849718)
