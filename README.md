@@ -35,7 +35,8 @@ The code from system.py demonstrates several aspects of clean code development s
 ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/ec4ffe81-d760-417f-9a97-794f39b5425b)
 
 # 6. Build Management
-PyBuilder
+
+PyBuilder is used for enhances development efficiency, testing, and dependency management. This extended tools is specifically for project configurations using Python language. 
 
 ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/ad226445-b19b-4b9e-908e-d731d6fe4d76)
 
