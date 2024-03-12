@@ -21,8 +21,7 @@
 
 # 4. Metrics
 
-![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/08129a62-14a9-4cc2-8534-a5725ce5c5e6)
-
+![311001368-08129a62-14a9-4cc2-8534-a5725ce5c5e6](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/06613a0b-58d7-4c35-b77c-bcea4e619cd7)
 
 # 5. Clean Code Development
 The code from system.py demonstrates several aspects of clean code development such as readability, modularity, simplicity, error handling and consistency. First, variable and method names have been made more consistent and descriptive to enhance readability. Second, repeated code blocks have been refactored into reusable functions. Third, comments that merely repeated what the code was doing have been removed, favoring descriptive function and variable names instead. Fourth, simplified conditional expressions where possible to make the code more straightforward. Finally, each method now focuses on a single responsibility, promoting better maintainability and readability. An example is extracted from the system.py file: 
