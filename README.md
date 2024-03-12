@@ -92,16 +92,26 @@ pipeline {
 ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/1c916371-373f-44b7-9b51-ef942c027de3)
 
 # 9. IDE
-VSCode
+
+Visual Studio Code (VSCode) is used for programming and developing software. The following picture shows the working environment of VSCode and the project tree (on the left side). 
+
 ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/9719efe6-1616-444d-bf83-05f2aed491af)
+
+My top favorvate key shortcuts on VSCode:
+
+* Ctrl + alt + up/down - Add cursor to multiple lines. 
+* Ctrl + K + C - Comment multiple lines
+* Ctrl + K + U - Uncomment multiple lines
+* Ctrl + C followed by Ctrl + V. 
 
 # 10. DSL
 
+The following picture is an example of DSL, showing the connection to the database, retrieving the movie with the highest rating, and printing its name.
+  
 ![image](https://github.com/bachthyaglx/advanced_software_engineering/assets/62774638/e3e04e33-4d7d-4067-b6e6-fac933ec4c13)
 
-+ connect: Allows users to connect to the specified cinema database using SQLite.
-+ get_movie_with_highest_rating: Retrieves the movie with the highest rating from the database by executing a SQL query.
-+ The DSL is demonstrated by connecting to the database, retrieving the movie with the highest rating, and printing its name.
+* connect: Allows users to connect to the specified cinema database using SQLite.
+* get_movie_with_highest_rating: Retrieves the movie with the highest rating from the database by executing a SQL query.
 
 # 11. Functional Programming
 
